@@ -1,105 +1,238 @@
-/* -----------------------------
-   colors used
-   -----------------------------
-    #000000
-    #020203
-    #4d84c4
-    #a51c30
-    #f5f5f8
-    #ebebeb
-    #ffffff
-    
-    You can see the color palette (minus the white and black) at: 
-    https://coolors.co/a51c30-4d84c4-020203-ebebeb-f5f5f8
-*/
+/* Body */
+* {
+   box-sizing: border-box;
+}
 
-/* -----------------------------
-   fonts used
-   -----------------------------
-Note that Roboto and "Roboto Condensed" are available from the linked fonts already in the HTML
+body, 
+button, 
+input, 
+select, 
+textarea {
+   font-family: Roboto, Arial, sans-serif;
+}
 
-font-family stack for most things:
-    Roboto, Arial, sans-serif;
+h1, 
+.explore h2 {
+   font-family: 'Roboto Condensed', Arial, sans-serif;
+   font-weight: 700;
+}
 
-font-family stack for 'condensed' elements, such as hX headings, header navigation, and links in the 'Explore'  section:
-    'Roboto Condensed', Arial, sans-serif;
-   -----------------------------  */
+ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
 
-/* -----------------------------
-   background images used
-   -----------------------------
-../images/hes_shield_wordmark.svg   - This is the HES Shield and HES Wordmark
-../images/campus_bridge_river.jpg   - This is the background image for the 
-                                      "Explore" section
-../images/arrow-right.svg    - This is the crimson arrow next to the 
-                                      hypertext links in the "Explore" sections
-../images/mortar-board.svg          - The "cap" in Student Success stories 'program'
-../images/map-marker.svg            - The map marker in Student Success 
-                                      stories 'hometown'
-
-   -----------------------------  */
+a {
+   text-decoration: none;
+   color: inherit;
+}
 
 body {
-    font-family: Roboto, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+   background-color: white;
 }
 
-/* turn off sections you aren't working on so you can focus!
-   I suggest you begin with working on the "footer"
-*/
-/* consider uncommenting this to start so that only the footer is visible! */
-/*
-div.explore,
-div.studentsuccess,
-header
-{
-    display: none;
+/* Header */
+header h2 {
+   background-color: darkred;
+   color: white;
+   font-variant: small-caps;
 }
-*/
 
-/* -----------------------------
-   Styles for footer
-   ----------------------------- */
+header h2.wordmark {
+   background-color: white;
+   color: black;
+   background-image: url("../images/hes_shield_wordmark.svg");
+   background-repeat: no-repeat;
+   height: 100px;
+   text-indent: -3000px;
+   flex-basis: 40%;
+}
 
-/* ----------------------------- */
+header div#fcontainer-header {
+   display: flex;
+   align-items: center;
+}
 
-/* -----------------------------
-   Styles for header
-   ----------------------------- */
+header nav ul {
+   display: flex;
+}
 
-/* ----------------------------- */
+header nav ul li {
+   padding-right: 1em;
+}
+
+header nav.primary ul li {
+   margin-right: 1em;
+   border-right: 2px solid black;
+}
+
+header nav.primary ul li:last-child {
+   border-color: transparent; 
+}
+
+header nav.primary ul li:last-child a {
+   background-color: darkred;
+   color: white;
+   padding: 0.2em 0.5em;
+}
+
+header nav.primary a {
+   color: black;
+   font-weight: bold;
+}
+
+header nav.primary {
+   margin-top: 2.5em;
+}
+
+header nav.secondary a {
+   color: darkblue;
+}
+
+header nav.secondary {
+   margin-bottom: 0.5em;
+}
+
+header nav.secondary ul li:last-child a {
+   border: 3px solid darkblue;
+   padding: 0.2em 0.5em;
+}
+
+/* Explore Section */
+.explore {
+   background-image: url("../images/campus_bridge_river.jpg");
+   background-size: cover;
+   background-position: center;
+   padding: 2em 0;
+   color: black;
+}
+
+.explore h1 {
+   color: white;
+   font-size: 3em;
+   text-shadow: 1px 1px 2px black;
+   text-align: center;
+}
+
+.explore .sections {
+   display: flex;
+   flex-wrap: wrap;
+   column-gap: 1rem;
+   row-gap: 1rem;
+}
+
+.explore .sections section {
+   flex: 25%;
+   background-color: lightgrey;
+   border-top: 7px solid darkred;
+   padding-bottom: 5em;
+   margin: 1em;
+   color: darkred;
+   text-align: left;
+}
+
+.explore h2 {
+   color: black;
+   background-color: white;
+   text-transform: uppercase;
+   margin: 0;
+   padding: .5em;
+}
+
+.explore .sections section ul li a {
+   background-image: url("../images/arrow-right.svg");
+   background-repeat: no-repeat;
+   background-position: right;
+   padding-right: 1.2rem;
+}
+
+.explore .sections section a {
+   padding: 1em;
+}
+
+/* Student Success */
+.studentsuccess {
+   background-color: lightgray;
+   text-align: center;
+}
+
+.studentsuccess h2 {
+   text-align: center;
+   padding-top: .5em;
+   font-size: 2em;
+   margin: 0;
+}
+
+.studentsuccess .articles {
+   display: flex;
+   
+}
+
+.studentsuccess .articles article {
+   flex-basis: 30%;
+   background-color: white;
+   padding: 2em;
+   margin: 1em;
+   text-align: left;
+}
+
+.studentsuccess img {
+   max-width: 100%;
+   height: auto;
+   margin-bottom: 1em;
+}
+
+.studentsuccess .program:before,
+.studentsuccess .hometown:before {
+   margin-right: 0.5em;
+   vertical-align: middle;
+}
+
+.studentsuccess .program:before {
+   content: url("../images/mortar-board.svg");
+}
+
+.studentsuccess .hometown:before {
+   content: url("../images/map-marker.svg");
+}
 
 
-/* -----------------------------
-   Styles for header primary nav
-   ----------------------------- */
+/* Footer */
+footer {
+   background-color: black;
+   color: white;
+   padding: 0.25em 0;
+   display: grid;
+   grid-template-rows: auto auto auto;
+   gap: 0.5em;
+}
 
-/* ----------------------------- */
+footer nav ul {
+   display: flex;
+   padding: 0;
+}
 
+footer nav ul li {
+   list-style-type: none;
+   padding-right: 1em;
+}
 
-/* -----------------------------
-   Styles for header primary nav
-   ----------------------------- */
+.contactplus ul {
+   font-size: 1.1em;
+   font-weight: bold;
+   margin-bottom: 1em;
+}
 
-/* ----------------------------- */
+.contactplus ul li {
+   margin-right: 1.5rem;
+}
 
+.privacyplus ul li {
+   margin-right: 1em;
+   border-right: 2px solid white;
+}
 
-/* -----------------------------
-   Styles for header secondary nav
-   ----------------------------- */
-
-/* ----------------------------- */
-
-
-/* -----------------------------
-   Styles for "Explore"
-   ----------------------------- */
-
-/* ----------------------------- */
-
-/* -----------------------------
-   Styles for "Student Success"
-   ----------------------------- */
-
-/* ----------------------------- */
+.privacyplus ul li:last-child {
+   border-color: transparent;
+}
